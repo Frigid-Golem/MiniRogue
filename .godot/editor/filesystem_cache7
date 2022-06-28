@@ -1,0 +1,22 @@
+0b7126e0c6e86d3ec295a72f5aa6e0bd
+::res://::1656396881
+game.tscn::PackedScene::780294446554170138::1656171417::0::1::::<><>::uid://d2v7gjhnqpcio
+icon.png::CompressedTexture2D::5784028578414171092::1655975146::1655975151::1::::<><>::
+::res://assets/::1656167822
+GameUI.tres::Theme::5963284010716821360::1656163271::0::1::::<><>::uid://bfj0hl5qpa02l
+Kenney Pixel.ttf::FontData::2757475351894322549::1655976544::1655976546::1::::<><>::
+sprites.png::CompressedTexture2D::7676654431213001630::1656167820::1656167822::1::::<><>::
+spritesheet.png::CompressedTexture2D::4706853215316583517::1655132826::1655975706::1::::<><>::
+::res://resources/::1655975720
+::res://scenes/::1656171417
+Dungeon.tscn::PackedScene::9099666904809805310::1656171417::0::1::::<><>::res://scripts/GameManager.gd<>uid://dhmvm2ya3p3wk<>res://scripts/Map.gd<>uid://7hmj3mjjstfx
+UI.tscn::PackedScene::1190689861905234341::1656171417::0::1::::<><>::uid://cq7wofmtog6lo<>res://scripts/shaders/blurry.gdshader
+Unit.tscn::PackedScene::2261239806366928845::1656171417::0::1::::<><>::uid://dhmvm2ya3p3wk<>res://scripts/Unit.gd
+::res://scripts/::1656170944
+GameManager.gd::GDScript::-1::1656169861::0::1::::GameManger<>Node<>::
+Globals.gd::GDScript::-1::1656168261::0::1::::<>Node<>::
+Map.gd::GDScript::-1::1656169605::0::1::::Map<>TileMap<>::
+Unit.gd::GDScript::-1::1656170944::0::1::::<>Node2D<>::
+Utils.gd::GDScript::-1::1656168256::0::1::::<>Node<>::
+::res://scripts/shaders/::1655980750
+blurry.gdshader::Shader::-1::1655980750::0::1::::<><>::

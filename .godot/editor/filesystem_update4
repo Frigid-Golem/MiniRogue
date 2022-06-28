@@ -1,0 +1,10 @@
+res://game.tscn
+res://assets/GameUI.tres
+res://scenes/Dungeon.tscn
+res://scripts/Utils.gd
+res://scripts/Globals.gd
+res://scripts/GameManager.gd
+res://scripts/Map.gd
+res://scenes/Unit.tscn
+res://scripts/Unit.gd
+res://scenes/UI.tscn
