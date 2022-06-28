@@ -1,5 +1,5 @@
-res://Game.tscn
-res://resources/Tilemap.tres
 res://scenes/Entity.tscn
+res://resources/Tilemap.tres
+res://scripts/entity/Entity.gd
+res://Game.tscn
 res://scenes/Dungeon.tscn
-res://scripts/GameManager.gd

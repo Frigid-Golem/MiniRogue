@@ -30,6 +30,8 @@ custom_data_layers = ["walkable", "transparent"]
 
 [node name="Player" parent="Entities" instance=ExtResource( "4_ysxbd" )]
 position = Vector2(128, 112)
+sprite_index = Vector2i(8, 18)
+fg_color = Color(1, 0.666667, 0.368627, 1)
 
 [node name="Camera2D" type="Camera2D" parent="Entities/Player"]
 current = true
