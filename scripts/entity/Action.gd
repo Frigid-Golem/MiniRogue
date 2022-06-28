@@ -8,7 +8,6 @@ class MoveAction extends Action:
 	var dy: int = 0
 	
 	func _init(x: int, y: int) -> void:
-		super._init()
 		self.dx = x
 		self.dy = y
 	
