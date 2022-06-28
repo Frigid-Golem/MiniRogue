@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cit37inl371ru"]
+
+[ext_resource type="Script" path="res://scripts/entity/NPC.gd" id="1_sj68i"]
+[ext_resource type="Texture2D" uid="uid://dhmvm2ya3p3wk" path="res://assets/sprites.png" id="2_1okae"]
+
+[node name="NPC" type="Node2D"]
+script = ExtResource( "1_sj68i" )
+sprite_index = Vector2i(0, 0)
+fg_color = Color(0.552941, 0.411765, 0.478431, 1)
+
+[node name="bg" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(8, 8)
+texture = ExtResource( "2_1okae" )
+hframes = 49
+vframes = 22
+frame = 8
+
+[node name="fg" type="Sprite2D" parent="."]
+modulate = Color(0.552941, 0.411765, 0.478431, 1)
+texture_filter = 1
+position = Vector2(8, 8)
+texture = ExtResource( "2_1okae" )
+hframes = 49
+vframes = 22

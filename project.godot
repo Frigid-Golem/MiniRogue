@@ -20,7 +20,7 @@ _global_script_classes=[{
 "path": "res://scripts/entity/Entity.gd"
 }, {
 "base": "Node",
-"class": &"GameManger",
+"class": &"GameManager",
 "language": &"GDScript",
 "path": "res://scripts/GameManager.gd"
 }, {
@@ -28,12 +28,48 @@ _global_script_classes=[{
 "class": &"Map",
 "language": &"GDScript",
 "path": "res://scripts/Map.gd"
+}, {
+"base": "Entity",
+"class": &"NPC",
+"language": &"GDScript",
+"path": "res://scripts/entity/NPC.gd"
+}, {
+"base": "Entity",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://scripts/entity/Player.gd"
+}, {
+"base": "Room",
+"class": &"RectangularRoom",
+"language": &"GDScript",
+"path": "res://scripts/procgen/rooms/RectangularRoom.gd"
+}, {
+"base": "Object",
+"class": &"Room",
+"language": &"GDScript",
+"path": "res://scripts/procgen/rooms/Room.gd"
+}, {
+"base": "Object",
+"class": &"Tunnel",
+"language": &"GDScript",
+"path": "res://scripts/procgen/Tunnel.gd"
+}, {
+"base": "Object",
+"class": &"Utils",
+"language": &"GDScript",
+"path": "res://scripts/Utils.gd"
 }]
 _global_script_class_icons={
 "Action": "",
 "Entity": "",
-"GameManger": "",
-"Map": ""
+"GameManager": "",
+"Map": "",
+"NPC": "",
+"Player": "",
+"RectangularRoom": "",
+"Room": "",
+"Tunnel": "",
+"Utils": ""
 }
 
 [application]
@@ -46,7 +82,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Globals="*res://scripts/Globals.gd"
-Utils="*res://scripts/Utils.gd"
 
 [display]
 

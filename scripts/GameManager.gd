@@ -1,4 +1,4 @@
-class_name GameManger 
+class_name GameManager 
 extends Node
 
 var Action = load('res://scripts/entity/Action.gd') # Cannot preload because of cyclic reference
@@ -21,7 +21,7 @@ func step():
 	step_entity(current_entity)
 
 func step_entity(entity: Entity):
-	var action = entity.next_action
+	var action = entity.get_next_action()
 	if action == null: return # Waiting for player input
 	
 	action.perform(self, entity)
@@ -38,7 +38,9 @@ func get_all_entities() -> Array[Entity]:
 	return entities.map(func (node: Node): return node as Entity)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed('move_up', true):
+	if event.is_action_pressed("ui_cancel"):
+		player.next_action = Action.ExitAction.new()
+	elif event.is_action_pressed('move_up', true):
 		player.next_action = Action.MoveAction.new(0, -1)
 	elif event.is_action_pressed('move_down', true):
 		player.next_action = Action.MoveAction.new(0, 1)
