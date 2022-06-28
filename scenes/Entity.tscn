@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://chcydibltfx1t"]
+
+[ext_resource type="Script" path="res://scripts/entity/Entity.gd" id="1_5he6y"]
+[ext_resource type="Texture2D" uid="uid://dhmvm2ya3p3wk" path="res://assets/sprites.png" id="2_wdm8y"]
+
+[node name="Unit" type="Node2D"]
+script = ExtResource( "1_5he6y" )
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.666667, 0.368627, 1)
+texture_filter = 1
+position = Vector2(8, 8)
+texture = ExtResource( "2_wdm8y" )
+hframes = 49
+vframes = 22
+frame = 981

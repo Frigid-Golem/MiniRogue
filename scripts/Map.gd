@@ -10,16 +10,6 @@ func _ready() -> void:
 	atlas = tile_set.get_source(atlas_id)
 
 
-var dict = {}
-func _process(delta: float) -> void:
-	var mouse = world_to_map(get_global_mouse_position())
-	var new_dict = get_tile_data(mouse)
-	
-	if new_dict.is_empty() or new_dict == dict: return
-	
-	dict = new_dict
-	print(dict)
-
 ## Returns a dict with all custom data for a cell.
 ## Returns an empty dict if no data is found.
 ## If no layer is specified (set to -1), it will go from highest to lowest until a tile with data is found.

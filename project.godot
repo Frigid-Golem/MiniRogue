@@ -9,6 +9,16 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Object",
+"class": &"Action",
+"language": &"GDScript",
+"path": "res://scripts/entity/Action.gd"
+}, {
+"base": "Node2D",
+"class": &"Entity",
+"language": &"GDScript",
+"path": "res://scripts/entity/Entity.gd"
+}, {
 "base": "Node",
 "class": &"GameManger",
 "language": &"GDScript",
@@ -20,6 +30,8 @@ _global_script_classes=[{
 "path": "res://scripts/Map.gd"
 }]
 _global_script_class_icons={
+"Action": "",
+"Entity": "",
 "GameManger": "",
 "Map": ""
 }
@@ -27,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="MiniRogue"
-run/main_scene="res://game.tscn"
+run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 config/icon="res://icon.png"
 
