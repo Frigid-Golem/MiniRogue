@@ -9,6 +9,8 @@ class_name Entity extends Node2D
 @onready var bg_sprite: Sprite2D = $bg
 
 var cell: Vector2i:
+	set(pos):
+		position = Vector2(pos * Globals.CELL_SIZE)
 	get:
 		return (Vector2i(position) / Globals.CELL_SIZE)
 	

@@ -7,7 +7,19 @@ var Action = load('res://scripts/entity/Action.gd') # Cannot preload because of 
 @onready var entity_container = $Entities
 @onready var player: Entity = $Entities/Player
 
+@export var max_rooms = 30
+@export var room_max_size = 10
+@export var room_min_size = 6
+
 var current_entity_index = 0
+var generator: LevelGenerator
+
+func _ready() -> void:
+	generator = LevelGenerator.new(map, randi())
+	generate_floor()
+
+func generate_floor():
+	generator.generate(max_rooms, room_min_size, room_max_size, player)
 
 func _process(_delta: float) -> void:
 	step()
@@ -39,7 +51,8 @@ func get_all_entities() -> Array[Entity]:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		player.next_action = Action.ExitAction.new()
+#		player.next_action = Action.ExitAction.new()
+		generate_floor()
 	elif event.is_action_pressed('move_up', true):
 		player.next_action = Action.MoveAction.new(0, -1)
 	elif event.is_action_pressed('move_down', true):

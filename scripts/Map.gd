@@ -6,34 +6,20 @@ enum Layer {
 	Floors = 0
 }
 
-#var RectRoom = preload('res://scripts/procgen/rooms/RectangularRoom.gd')
-
 @export var width = 60
 @export var height = 30
+
+
 
 @export var custom_data_layers: Array[String] = []
 @export var atlas_id: int = 1
 
 var atlas: TileSetAtlasSource
+var generator: LevelGenerator
 
 func _ready() -> void:
 	atlas = tile_set.get_source(atlas_id)
-	
-	generate()
-	
-func generate() -> void:
-	clear()
-	fill_area(Vector2i(0, 0), Vector2i(width, height), Layer.Walls, Vector2(10, 0))
-	fill_area(Vector2i(0, 0), Vector2i(width, height), Layer.Floors, Vector2(10, 1))
-	
-	var room_1 := RectangularRoom.new(20, 5, 5, 10)
-	var room_2 := RectangularRoom.new(35, 20, 10, 5)
-	var tunnel := Tunnel.new(room_1.center(), room_2.center())
-	
-	erase_tiles(Layer.Walls, room_1.inner())
-	erase_tiles(Layer.Walls, room_2.inner())
-	erase_tiles(Layer.Walls, tunnel.tiles())
-	
+
 
 ## Returns a dict with all custom data for a cell.
 ## Returns an empty dict if no data is found.

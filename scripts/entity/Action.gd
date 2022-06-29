@@ -22,11 +22,11 @@ class MoveAction extends Action:
 	func perform(engine: GameManager, entity: Entity):
 		super.perform(engine, entity)
 		
-		var cell = (Vector2i(entity.position) / Globals.CELL_SIZE) + Vector2i(dx, dy)
+		var cell = entity.cell + Vector2i(dx, dy)
 		var data = engine.map.get_tile_data(cell)
 		var entities = engine.get_all_entities()
 	
 		assert(not data.is_empty())
 	
 		if data['walkable'] and entities.all(func(entity): return entity.cell != cell):
-			entity.position = Vector2(cell * Globals.CELL_SIZE) 
+			entity.cell = cell
