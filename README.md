@@ -17,6 +17,7 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
   - [ ] FOV Calculations based on [this article](http://roguebasin.com/index.php/Eligloscode)
   - [ ] FOV Layer on Map
   - [ ] Hidden/Dark Wall Tiles
+  - [ ] Bump Entities
 
 ## Screenshots
 
@@ -27,6 +28,10 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
 ### Proc Gen visualisation
 
 ![procedural generation video](./docs/procgen.gif)
+
+### FOV visualisation
+
+![field of view video](./docs/fov.gif)
 
 ## Resources used
 

@@ -52,6 +52,11 @@ func fill_area(start: Vector2i, size: Vector2i, layer: int, atlas_pos: Vector2i)
 	for x in range(start.x, start.x + size.x):
 		for y in range(start.y, start.y + size.y):
 			set_cell(layer, Vector2i(x, y), atlas_id, atlas_pos)
+			
+func erase_area(start: Vector2i, size: Vector2i, layer: int) -> void:
+	for x in range(start.x, start.x + size.x):
+		for y in range(start.y, start.y + size.y):
+			erase_cell(layer, Vector2i(x, y))
 
 func fill_tiles(layer: int, tiles: Array[Vector2i], atlas_pos: Vector2i):
 	for tile in tiles:

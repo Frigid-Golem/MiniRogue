@@ -4,6 +4,7 @@ extends Node
 var Action = load('res://scripts/entity/Action.gd') # Cannot preload because of cyclic reference
 
 @onready var map: Map = $Map
+@onready var fov: FOV = $FOV
 @onready var entity_container = $Entities
 @onready var player: Entity = $Entities/Player
 
@@ -17,9 +18,13 @@ var generator: LevelGenerator
 func _ready() -> void:
 	generator = LevelGenerator.new(map, randi())
 	generate_floor()
+	
 
 func generate_floor():
+	fov.bind(map)
+	
 	generator.generate(max_rooms, room_min_size, room_max_size, player)
+	fov.show_for_entity(player)
 
 func _process(_delta: float) -> void:
 	step()

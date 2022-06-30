@@ -25,6 +25,7 @@ func generate(
 	var rooms: Array[RectangularRoom] = []
 	
 	if visualisation_mode:
+		@warning_ignore(integer_division)
 		player.cell = Vector2i(map.width/2, map.height/2)
 		player.visible = false
 	

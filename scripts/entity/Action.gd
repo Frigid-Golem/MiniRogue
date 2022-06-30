@@ -30,3 +30,5 @@ class MoveAction extends Action:
 	
 		if data['walkable'] and entities.all(func(entity): return entity.cell != cell):
 			entity.cell = cell
+			if "is_player" in entity: 
+				engine.fov.show_for_entity(entity)

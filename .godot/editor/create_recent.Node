@@ -1,3 +1,5 @@
+PointLight2D
+TileMap
 Entity (Entity.gd)
 Control
 Camera2D
@@ -7,4 +9,3 @@ Node2D
 Map (Map.gd)
 Label
 Panel
-TileMap
