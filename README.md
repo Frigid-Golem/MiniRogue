@@ -26,10 +26,12 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
 
 - [ ] Refactors
 
-  - [ ] Change FOV algorithm (this one does not have expansive walls, generating ugly corridor FOV). Change to [Shadowcasting](http://www.adammil.net/blog/v125_Roguelike_Vision_Algorithms.html#shadowcode)
+  - [ ] Change FOV algorithm to [Shadowcasting](http://www.adammil.net/blog/v125_Roguelike_Vision_Algorithms.html#shadowcode)
+      - Raycasting does not have expansive walls, generating ugly corridor FOV. 
   - [ ] Change code to make more use of Godot Features (such as Resources)
     - [ ] Level Generator
     - [ ] Monsters
+  
 
 ## Screenshots
 
