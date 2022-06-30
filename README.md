@@ -14,9 +14,9 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
   - [x] Rectangular Rooms and Corner Tunnels
   - [x] Dungeon Generation
 - [ ] Part 3
-  - [ ] FOV Calculations based on [this article](http://roguebasin.com/index.php/Eligloscode)
-  - [ ] FOV Layer on Map
-  - [ ] Hidden/Dark Wall Tiles
+  - [x] FOV Calculations based on [this article](http://roguebasin.com/index.php/Eligloscode)
+  - [x] FOV Layer on Map
+  - [x] Hidden/Dark Wall Tiles
   - [ ] Bump Entities
 
 ## Screenshots
