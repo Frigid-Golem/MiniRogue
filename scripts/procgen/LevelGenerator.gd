@@ -4,19 +4,24 @@ var visualisation_mode: bool = false
 var visualisation_delay: float = 0.5
 
 var map: Map
+var engine: GameManager
 
-func _init(_map: Map, random_seed: int) -> void:
+var NPC = load('res://scenes/Entities/NPC.tscn')
+
+func _init(_engine, _map: Map, random_seed: int) -> void:
 	var seed_str: String = seed_to_str(random_seed)
 	print('Using seed: '+ seed_str + '|' + var2str(random_seed))
 	
 	seed(random_seed)
 	
+	self.engine = _engine
 	self.map = _map
 
 func generate(
 	max_rooms: int,
 	room_min_size: int,
 	room_max_size: int,
+	room_max_monsters: int,
 	player: Entity
 ):	
 	map.fill_area(Vector2i(0, 0), Vector2i(map.width, map.height), map.Layer.Walls, Vector2(10, 0))
@@ -54,7 +59,37 @@ func generate(
 			var tunnel = Tunnel.new(new_room.center(), rooms[-1].center())
 			map.erase_tiles(map.Layer.Walls, tunnel.tiles())
 		
+		fill_room_with_monsters(new_room, room_max_monsters)
+		
 		rooms.append(new_room)
+
+func fill_room_with_monsters(room: RectangularRoom, maximum_amount: int):
+	var amount = randi_range(0, maximum_amount)
+	
+	for i in range(amount):
+		var x = randi_range(room.x1 + 1, room.x2 - 1)
+		var y = randi_range(room.y1 + 1, room.y2 - 1)
+		var cell = Vector2i(x, y)
+		
+		if engine.get_all_entities().any(func(e): return e.cell == cell):
+			continue
+		
+		if randf() < 0.8:
+			spawn_npc(cell, "Skeleton", Vector2i(5, 6))
+		else:
+			spawn_npc(cell, "Golem", Vector2i(6, 6))
+
+func spawn_npc(cell: Vector2i, name: String, atlas_pos: Vector2i, color: Color = Color("#8d697a")):
+	var npc : NPC = NPC.instantiate()
+	npc.cell = cell
+	
+	engine.entity_container.add_child(npc)
+	
+	npc.sprite_index = atlas_pos
+	npc.fg_color = color
+	npc.name = name
+	
+	npc._setup()
 
 func seed_to_str(random_seed: int) -> String:
 	var hex = var2bytes(random_seed).slice(4, 16).hex_encode()

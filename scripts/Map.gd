@@ -9,17 +9,13 @@ enum Layer {
 @export var width = 60
 @export var height = 30
 
-
-
 @export var custom_data_layers: Array[String] = []
 @export var atlas_id: int = 1
 
 var atlas: TileSetAtlasSource
-var generator: LevelGenerator
 
 func _ready() -> void:
 	atlas = tile_set.get_source(atlas_id)
-
 
 ## Returns a dict with all custom data for a cell.
 ## Returns an empty dict if no data is found.

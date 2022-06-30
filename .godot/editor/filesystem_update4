@@ -1,7 +1,8 @@
 res://scenes/Dungeon.tscn
 res://resources/Tilemap.tres
 res://Game.tscn
-res://scenes/Entities/Player.tscn
+res://scripts/procgen/LevelGenerator.gd
+res://scripts/entity/NPC.gd
 res://scenes/Entities/NPC.tscn
-res://scripts/FOV.gd
-res://scripts/entity/Player.gd
+res://scripts/entity/Action.gd
+res://scripts/GameManager.gd

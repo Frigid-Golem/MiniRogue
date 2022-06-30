@@ -7,21 +7,29 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
 ## Chapters
 
 - [x] Part 1
+
   - [x] Render Map & Entities to screen
   - [x] Basic game loop (Entity performs Action)
   - [x] Entity Collisions with the Map and other Entities
+
 - [x] Part 2
+
   - [x] Rectangular Rooms and Corner Tunnels
   - [x] Dungeon Generation
-- [ ] Part 3
+
+- [x] Part 3
 
   - [x] FOV Calculations based on [this article](http://roguebasin.com/index.php/Eligloscode)
   - [x] FOV Layer on Map
   - [x] Hidden/Dark Wall Tiles
-  - [ ] Bump Entities
+  - [x] Bump Entities
 
 - [ ] Refactors
+
   - [ ] Change FOV algorithm (this one does not have expansive walls, generating ugly corridor FOV). Change to [Shadowcasting](http://www.adammil.net/blog/v125_Roguelike_Vision_Algorithms.html#shadowcode)
+  - [ ] Change code to make more use of Godot Features (such as Resources)
+    - [ ] Level Generator
+    - [ ] Monsters
 
 ## Screenshots
 
