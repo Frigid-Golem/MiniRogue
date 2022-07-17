@@ -61,3 +61,28 @@ func fill_tiles(layer: int, tiles: Array[Vector2i], atlas_pos: Vector2i):
 func erase_tiles(layer, tiles: Array[Vector2i]):
 	for tile in tiles:
 		erase_cell(layer, tile)
+
+func calc_astar_graph() -> AStar2D:
+	var astar = AStar2D.new()
+	
+	# Add Nodes
+	var tiles = get_used_cells(Layer.Floors)
+	for i in range(len(tiles)): astar.add_point(i, tiles[i])
+	
+	# Connect Nodes
+	for i in range(len(tiles)):
+		var point = tiles[i]
+		var points_relative = [
+			point + Vector2i.RIGHT,
+			point + Vector2i.LEFT,
+			point + Vector2i.DOWN,
+			point + Vector2i.UP,
+		]
+		
+		for relative in points_relative:
+			var idx = astar.get_closest_point(Vector2(relative))
+			
+			if i == idx: continue
+			astar.connect_points(i, idx, false)
+		
+	return astar

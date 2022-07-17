@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/entity/NPC.gd" id="1_sj68i"]
 [ext_resource type="Texture2D" uid="uid://dhmvm2ya3p3wk" path="res://assets/sprites.png" id="2_v41lr"]
-[ext_resource type="Resource" path="res://resources/Entities/Player.tres" id="2_wvlec"]
+[ext_resource type="Resource" uid="uid://darks1hlwmsob" path="res://resources/entities/Player.tres" id="2_wvlec"]
 
 [node name="NPC" type="Node2D"]
 script = ExtResource("1_sj68i")

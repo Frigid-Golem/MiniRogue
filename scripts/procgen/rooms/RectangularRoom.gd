@@ -27,6 +27,15 @@ func inner() -> Array[Vector2i]:
 			result.append(Vector2i(x, y))
 	
 	return result
+	
+func tiles() -> Array[Vector2i]:
+	var result: Array[Vector2i] = []
+	
+	for x in range(x1, x2):
+		for y in range(y1, y2):
+			result.append(Vector2i(x, y))
+	
+	return result
 
 func intersects(other: RectangularRoom):
 	return (

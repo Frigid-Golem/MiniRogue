@@ -6,6 +6,10 @@ var entity_stats: EntityStats = null
 @onready var fg_sprite: Sprite2D = $fg
 @onready var bg_sprite: Sprite2D = $bg
 
+var current_health = 1
+
+var game_manager: GameManager = null
+
 var cell: Vector2i:
 	set(pos):
 		position = Vector2(pos * Globals.CELL_SIZE)
@@ -17,9 +21,13 @@ var next_action: Action
 
 func _ready() -> void:
 	_setup()
+	
+	game_manager = get_tree().get_first_node_in_group('game_manager')
 
 func _setup() -> void:
 	entity_stats = stats
+	
+	current_health = entity_stats.health
 	
 	fg_sprite.modulate = entity_stats.fg_color
 	bg_sprite.modulate = entity_stats.bg_color

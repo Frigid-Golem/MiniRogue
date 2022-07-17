@@ -1,5 +1,7 @@
 class_name FOV extends Map
 
+@export var enabled = true
+
 var map: Map
 
 enum FovLayer {
@@ -18,6 +20,7 @@ func bind(_map: Map):
 	_clear_discovered()
 	
 func show_for_entity(entity: Entity):
+	if not enabled: return
 	_hide_map()
 	_show_discovered()
 	_compute_fov(entity)
@@ -41,7 +44,7 @@ func _compute_fov_ray(entity: Entity, x: float, y: float):
 		_set_visible(current_cell)
 		
 		var data = map.get_tile_data(current_cell)
-		if not data['transparent']: return
+		if data == {} or not data['transparent']: return
 		
 		current += Vector2(x, y)
 

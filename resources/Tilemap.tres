@@ -1,6 +1,11 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dhsdh3n40y2jh"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://dhsdh3n40y2jh"]
 
 [ext_resource type="Texture2D" uid="uid://dhmvm2ya3p3wk" path="res://assets/sprites.png" id="1_f7s3t"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6ov8a"]
+vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
+outlines = [PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sltou"]
 texture = ExtResource("1_f7s3t")
@@ -65,6 +70,7 @@ texture = ExtResource("1_f7s3t")
 6:1/0 = 0
 7:1/0 = 0
 10:1/0 = 0
+10:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_6ov8a")
 10:1/0/custom_data_0 = true
 10:1/0/custom_data_1 = true
 13:1/0 = 0
@@ -428,6 +434,7 @@ texture = ExtResource("1_f7s3t")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Walls"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+navigation_layer_0/layers = 1
 custom_data_layer_0/name = "walkable"
 custom_data_layer_0/type = 1
 custom_data_layer_1/name = "transparent"

@@ -4,17 +4,17 @@
 [ext_resource type="Script" path="res://scripts/Map.gd" id="2_0f638"]
 [ext_resource type="TileSet" uid="uid://dhsdh3n40y2jh" path="res://resources/Tilemap.tres" id="2_y3t1r"]
 [ext_resource type="Script" path="res://scripts/FOV.gd" id="4_pa0j7"]
-[ext_resource type="PackedScene" uid="uid://cw6om5tnkuvsl" path="res://scenes/Entities/Player.tscn" id="4_q2ni5"]
+[ext_resource type="PackedScene" uid="uid://buv11cidgkkr7" path="res://scenes/Entities/Player.tscn" id="4_q2ni5"]
 
-[node name="GameManager" type="Node"]
-script = ExtResource( "1_lwgc3" )
-max_rooms = 200
+[node name="GameManager" type="Node" groups=["game_manager"]]
+script = ExtResource("1_lwgc3")
+max_rooms = 100
 room_max_size = 12
 room_min_size = 4
 
 [node name="Map" type="TileMap" parent="." groups=["map"]]
 texture_filter = 1
-tile_set = ExtResource( "2_y3t1r" )
+tile_set = ExtResource("2_y3t1r")
 format = 2
 layer_0/name = "Floor"
 layer_0/modulate = Color(0.12549, 0.235294, 0.337255, 1)
@@ -26,14 +26,14 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
-script = ExtResource( "2_0f638" )
+script = ExtResource("2_0f638")
 width = 50
 height = 35
 custom_data_layers = ["walkable", "transparent"]
 
 [node name="Entities" type="Node" parent="."]
 
-[node name="Player" parent="Entities" instance=ExtResource( "4_q2ni5" )]
+[node name="Player" parent="Entities" instance=ExtResource("4_q2ni5")]
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Entities/Player"]
@@ -48,7 +48,7 @@ drag_bottom_margin = 0.1
 editor_draw_screen = false
 
 [node name="FOV" type="TileMap" parent="."]
-tile_set = ExtResource( "2_y3t1r" )
+tile_set = ExtResource("2_y3t1r")
 format = 2
 layer_0/name = "Hidden"
 layer_0/modulate = Color(0.0509804, 0.168627, 0.270588, 1)
@@ -66,4 +66,4 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
-script = ExtResource( "4_pa0j7" )
+script = ExtResource("4_pa0j7")

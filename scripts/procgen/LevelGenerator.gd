@@ -1,12 +1,14 @@
 class_name LevelGenerator extends Object
 
 var visualisation_mode: bool = false
-var visualisation_delay: float = 0.5
+var visualisation_delay: float = 0.25
 
 var map: Map
 var engine: GameManager
 
 var NPC = load('res://scenes/Entities/NPC.tscn')
+
+const floor_atlas = Vector2(10, 1)
 
 func _init(_engine, _map: Map, random_seed: int) -> void:
 	var seed_str: String = seed_to_str(random_seed)
@@ -25,8 +27,7 @@ func generate(
 	player: Entity
 ):	
 	map.fill_area(Vector2i(0, 0), Vector2i(map.width, map.height), map.Layer.Walls, Vector2(10, 0))
-	map.fill_area(Vector2i(0, 0), Vector2i(map.width, map.height), map.Layer.Floors, Vector2(10, 1))
-	
+	map.erase_area(Vector2i(0, 0), Vector2i(map.width, map.height), map.Layer.Floors)
 	var rooms: Array[RectangularRoom] = []
 	
 	if visualisation_mode:
@@ -50,16 +51,23 @@ func generate(
 		await delay_for_visualisation()
 	
 		map.erase_tiles(map.Layer.Walls, new_room.inner())
+		map.fill_tiles(map.Layer.Floors, new_room.inner(), floor_atlas)
 		
+		await delay_for_visualisation()
 		
 		if rooms.size() == 0:
 			if not visualisation_mode:
 				player.cell = new_room.center()
 		else:
 			var tunnel = Tunnel.new(new_room.center(), rooms[-1].center())
-			map.erase_tiles(map.Layer.Walls, tunnel.tiles())
+			var tiles = tunnel.tiles()
+			
+			map.erase_tiles(map.Layer.Walls, tiles)
+			map.fill_tiles(map.Layer.Floors, tiles, floor_atlas)
+			
+		await delay_for_visualisation()
 		
-		fill_room_with_monsters(new_room, room_max_monsters)
+		await fill_room_with_monsters(new_room, room_max_monsters)
 		
 		rooms.append(new_room)
 

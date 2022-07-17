@@ -12,3 +12,7 @@ class_name EntityStats extends Resource
 @export var health: int = 1
 @export var attack: int = 1
 @export var defense: int = 1
+
+@export_group("Behaviour")
+
+@export var ai: Resource

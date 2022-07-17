@@ -26,7 +26,7 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
 
 - [ ] Part 4
 
-  - [ ] Fightable Enemies
+  - [x] Fightable Enemies
   - [ ] Basic Enemy AI
   - [ ] Player Death
   - [ ] Basic UI

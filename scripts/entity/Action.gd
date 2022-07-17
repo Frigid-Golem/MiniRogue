@@ -26,9 +26,9 @@ class MoveAction extends DirectionalAction:
 		var cell = entity.cell + Vector2i(dx, dy)
 		var data = engine.map.get_tile_data(cell)
 	
-		assert(not data.is_empty())
+#		assert(not data.is_empty())
 	
-		if not data['walkable']: return
+		if data.is_empty() or not data['walkable']: return
 		if engine.cell_contains_entity(cell): return
 		
 		entity.cell = cell
@@ -40,10 +40,26 @@ class MeleeAction extends DirectionalAction:
 		super.perform(engine, entity)
 		
 		var cell = entity.cell + Vector2i(dx, dy)
-		var target = engine.entity_at_cell(cell)
+		var target: Entity = engine.entity_at_cell(cell)
 		if target == null: return
 		
-		print('You kicked {name}, much to it\'s annoyance!'.format({ 'name' : target.name }))
+		var damage = max(entity.entity_stats.attack - target.entity_stats.defense, 0)
+		
+		target.current_health -= damage
+		
+		if target.current_health > 0:
+			print('{entity} attacked {target}, doing {damage} damage!'.format({ 
+				'target' : target.name, 
+				'entity': entity.name,
+				'damage': damage 
+			}))
+		else:
+			print('{entity} kills {target}, by doing {damage} damage!'.format({ 
+				'target' : target.name, 
+				'entity': entity.name,
+				'damage': damage 
+			}))
+			target.free()
 
 class BumpAction extends DirectionalAction:
 	func perform(engine: GameManager, entity: Entity):

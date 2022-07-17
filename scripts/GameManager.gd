@@ -24,11 +24,13 @@ func generate_floor():
 	for entity in get_all_entities():
 		if entity == player: continue
 		entity.free()
-	
+	current_entity_index = 0
 	fov.bind(map)
 	
 	generator.generate(max_rooms, room_min_size, room_max_size, room_max_monsters, player)
 	fov.show_for_entity(player)
+	
+	print("Entities: %d" % get_all_entities().size())
 
 func _process(_delta: float) -> void:
 	step()

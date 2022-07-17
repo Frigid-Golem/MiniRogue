@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://7p1itf866ivm"]
+
+[ext_resource type="Script" path="res://scripts/entity/ai/HostileAI.gd" id="1_u8u1b"]
+
+[resource]
+script = ExtResource("1_u8u1b")
