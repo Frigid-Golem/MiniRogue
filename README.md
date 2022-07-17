@@ -24,14 +24,22 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
   - [x] Hidden/Dark Wall Tiles
   - [x] Bump Entities
 
+- [ ] Part 4
+
+  - [ ] Fightable Enemies
+  - [ ] Basic Enemy AI
+  - [ ] Player Death
+  - [ ] Basic UI
+    - [ ] Health Bar
+    - [ ] Message Log
+
 - [ ] Refactors
 
   - [ ] Change FOV algorithm to [Shadowcasting](http://www.adammil.net/blog/v125_Roguelike_Vision_Algorithms.html#shadowcode)
-      - Raycasting does not have expansive walls, generating ugly corridor FOV. 
+    - Raycasting does not have expansive walls, generating ugly corridor FOV.
   - [ ] Change code to make more use of Godot Features (such as Resources)
     - [ ] Level Generator
-    - [ ] Monsters
-  
+    - [x] Monsters
 
 ## Screenshots
 
