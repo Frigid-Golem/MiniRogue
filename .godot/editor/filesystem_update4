@@ -1,8 +1,11 @@
-res://scenes/Dungeon.tscn
+res://scenes/Entities/Player.tscn
 res://resources/Tilemap.tres
+res://scripts/entity/Entity.gd
+res://scripts/entity/NPC.gd
+res://resources/Entities/Player.tres
+res://scenes/Entities/NPC.tscn
 res://Game.tscn
 res://scripts/procgen/LevelGenerator.gd
-res://scripts/entity/NPC.gd
-res://scenes/Entities/NPC.tscn
-res://scripts/entity/Action.gd
-res://scripts/GameManager.gd
+res://scripts/entity/ActorStats.gd
+res://resources/Entities/Skeleton.tres
+res://resources/Entities/Golem.tres
