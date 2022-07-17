@@ -75,19 +75,16 @@ func fill_room_with_monsters(room: RectangularRoom, maximum_amount: int):
 			continue
 		
 		if randf() < 0.8:
-			spawn_npc(cell, "Skeleton", Vector2i(5, 6))
+			spawn_npc(cell, load('res://resources/Entities/Skeleton.tres'))
 		else:
-			spawn_npc(cell, "Golem", Vector2i(6, 6))
+			spawn_npc(cell, load('res://resources/Entities/Golem.tres'))
 
-func spawn_npc(cell: Vector2i, name: String, atlas_pos: Vector2i, color: Color = Color("#8d697a")):
+func spawn_npc(cell: Vector2i, stats: EntityStats):
 	var npc : NPC = NPC.instantiate()
+	npc.stats = stats
 	npc.cell = cell
 	
 	engine.entity_container.add_child(npc)
-	
-	npc.sprite_index = atlas_pos
-	npc.fg_color = color
-	npc.name = name
 	
 	npc._setup()
 

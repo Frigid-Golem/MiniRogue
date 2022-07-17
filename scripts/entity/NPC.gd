@@ -1,4 +1,3 @@
-@tool 
 class_name NPC extends Entity
 
 var Action = load('res://scripts/entity/Action.gd')

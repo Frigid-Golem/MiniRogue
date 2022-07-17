@@ -1,18 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw6om5tnkuvsl"]
+[gd_scene load_steps=4 format=3 uid="uid://cw6om5tnkuvsl"]
 
 [ext_resource type="Script" path="res://scripts/entity/Player.gd" id="1_kf50o"]
+[ext_resource type="Resource" path="res://resources/Entities/Player.tres" id="2_si80f"]
 [ext_resource type="Texture2D" uid="uid://dhmvm2ya3p3wk" path="res://assets/sprites.png" id="2_wdm8y"]
 
 [node name="Player" type="Node2D"]
-script = ExtResource( "1_kf50o" )
-sprite_index = Vector2i(4, 0)
-fg_color = Color(1, 0.666667, 0.368627, 1)
+script = ExtResource("1_kf50o")
+stats = ExtResource("2_si80f")
 
 [node name="bg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 position = Vector2(8, 8)
-texture = ExtResource( "2_wdm8y" )
+texture = ExtResource("2_wdm8y")
 hframes = 49
 vframes = 22
 frame = 8
@@ -21,7 +21,7 @@ frame = 8
 modulate = Color(1, 0.666667, 0.368627, 1)
 texture_filter = 1
 position = Vector2(8, 8)
-texture = ExtResource( "2_wdm8y" )
+texture = ExtResource("2_wdm8y")
 hframes = 49
 vframes = 22
 frame = 4

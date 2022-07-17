@@ -4,4 +4,4 @@
 
 [node name="Game" type="Node"]
 
-[node name="Dungeon" parent="." instance=ExtResource( "1_guig6" )]
+[node name="Dungeon" parent="." instance=ExtResource("1_guig6")]

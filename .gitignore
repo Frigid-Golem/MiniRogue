@@ -2,6 +2,8 @@
 .import/
 export.cfg
 
+.godot/shader_cache
+
 # Imported translations (automatically generated from CSV files)
 *.translation
 

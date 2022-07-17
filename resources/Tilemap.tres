@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dhmvm2ya3p3wk" path="res://assets/sprites.png" id="1_f7s3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sltou"]
-texture = ExtResource( "1_f7s3t" )
+texture = ExtResource("1_f7s3t")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -432,4 +432,4 @@ custom_data_layer_0/name = "walkable"
 custom_data_layer_0/type = 1
 custom_data_layer_1/name = "transparent"
 custom_data_layer_1/type = 1
-sources/1 = SubResource( "TileSetAtlasSource_sltou" )
+sources/1 = SubResource("TileSetAtlasSource_sltou")

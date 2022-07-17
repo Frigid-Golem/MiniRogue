@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/entity/EntityStats.gd" id="1_gdvbu"]
+
+[resource]
+script = ExtResource("1_gdvbu")
+name = "Player"
+sprite = Vector2i(4, 0)
+fg_color = Color(1, 0.666667, 0.368627, 1)
+bg_color = Color(1, 1, 1, 0)
+health = 1
+attack = 1
+defense = 1

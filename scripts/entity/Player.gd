@@ -1,4 +1,3 @@
-@tool 
 class_name Player extends Entity
 
 # this is here to check when checking for class Player generates a cyclical dependency
