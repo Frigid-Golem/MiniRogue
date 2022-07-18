@@ -1,11 +1,20 @@
+RichTextLabel
+Control
+PanelContainer
+Container
+Label
+VBoxContainer
+ScrollContainer
+HBoxContainer
+Panel
+TabContainer
+GridContainer
+CanvasLayer
+Node2D
 PointLight2D
 TileMap
 Entity (Entity.gd)
-Control
 Camera2D
 Sprite2D
 Node
-Node2D
 Map (Map.gd)
-Label
-Panel

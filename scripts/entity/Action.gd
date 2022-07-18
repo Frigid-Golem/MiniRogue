@@ -48,17 +48,17 @@ class MeleeAction extends DirectionalAction:
 		target.current_health -= damage
 		
 		if target.current_health > 0:
-			print('{entity} attacked {target}, doing {damage} damage!'.format({ 
-				'target' : target.name, 
-				'entity': entity.name,
+			Globals.log('{entity} attacked {target}, doing {damage} damage!'.format({ 
+				'target': target.entity_stats.name, 
+				'entity': entity.entity_stats.name,
 				'damage': damage 
-			}))
+			}), Color.DARK_ORANGE)
 		else:
-			print('{entity} kills {target}, by doing {damage} damage!'.format({ 
-				'target' : target.name, 
-				'entity': entity.name,
+			Globals.log('{entity} kills {target}, by doing {damage} damage!'.format({ 
+				'target': target.entity_stats.name, 
+				'entity': entity.entity_stats.name,
 				'damage': damage 
-			}))
+			}), Color.from_string("#ee1111", Color.REBECCA_PURPLE))
 			target.free()
 
 class BumpAction extends DirectionalAction:

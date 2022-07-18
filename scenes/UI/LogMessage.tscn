@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bp1ovtrr7v3th"]
+
+[node name="LogMessage" type="RichTextLabel"]
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[Empty]"
+fit_content_height = true
+autowrap_mode = 0

@@ -34,9 +34,11 @@ custom_data_layers = ["walkable", "transparent"]
 [node name="Entities" type="Node" parent="."]
 
 [node name="Player" parent="Entities" instance=ExtResource("4_q2ni5")]
+position = Vector2(512, 288)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Entities/Player"]
+offset = Vector2(200, 0)
 current = true
 process_callback = 0
 smoothing_enabled = true
@@ -45,7 +47,6 @@ drag_left_margin = 0.1
 drag_top_margin = 0.1
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
-editor_draw_screen = false
 
 [node name="FOV" type="TileMap" parent="."]
 tile_set = ExtResource("2_y3t1r")

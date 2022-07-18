@@ -28,10 +28,10 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
 
   - [x] Fightable Enemies
   - [x] Basic Enemy AI
-  - [ ] Player Death
+  - [x] Player Death (does crash the game for now)
   - [ ] Basic UI
     - [ ] Health Bar
-    - [ ] Message Log
+    - [x] Message Log
 
 - [ ] Refactors
 

@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccay774swlyqv"]
+
+[ext_resource type="Theme" uid="uid://eoo2bsiu6ep3" path="res://resources/theme.tres" id="1_qdnfs"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="1_sks34"]
+[ext_resource type="Script" path="res://scripts/ui/MessageLog.gd" id="3_1a4dh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfxlr"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Root" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_sks34")
+
+[node name="Sidebar" type="Panel" parent="Root"]
+top_level = true
+light_mask = 2
+texture_filter = 5
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_qdnfs")
+metadata/_edit_layout_mode = 1
+
+[node name="TabContainer" type="TabContainer" parent="Root/Sidebar"]
+anchor_right = 1.0
+offset_bottom = 384.0
+grow_horizontal = 2
+drag_to_rearrange_enabled = true
+metadata/_edit_layout_mode = 1
+
+[node name="Stats" type="Panel" parent="Root/Sidebar/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+offset_bottom = -2.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lfxlr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Sidebar/TabContainer/Stats"]
+anchor_left = 0.083
+anchor_top = 0.056
+anchor_right = 1.0
+anchor_bottom = 0.955
+offset_left = 0.0639992
+offset_top = -17.712
+offset_right = -16.0
+offset_bottom = -0.160004
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Health" type="HBoxContainer" parent="Root/Sidebar/TabContainer/Stats/VBoxContainer"]
+offset_right = 277.0
+offset_bottom = 23.0
+
+[node name="Health Label" type="Label" parent="Root/Sidebar/TabContainer/Stats/VBoxContainer/Health"]
+offset_right = 214.0
+offset_bottom = 23.0
+size_flags_horizontal = 3
+text = "Health"
+
+[node name="Health Display" type="Label" parent="Root/Sidebar/TabContainer/Stats/VBoxContainer/Health"]
+offset_left = 218.0
+offset_right = 277.0
+offset_bottom = 23.0
+size_flags_horizontal = 8
+text = "25 / 25"
+
+[node name="Inventory" type="Panel" parent="Root/Sidebar/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 28.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lfxlr")
+
+[node name="MessageLog" type="Control" parent="Root/Sidebar"]
+anchor_top = 0.667
+anchor_right = 1.083
+anchor_bottom = 1.0
+offset_top = -0.192017
+offset_right = -15.936
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_1a4dh")
+metadata/_edit_layout_mode = 1
+metadata/_edit_use_custom_anchors = true
+
+[node name="Message Log" type="Label" parent="Root/Sidebar/MessageLog"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 109.0
+offset_bottom = 39.0
+text = "Message Log"
+vertical_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Sidebar/MessageLog"]
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 314.624
+offset_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = -5

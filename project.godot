@@ -54,6 +54,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scripts/Map.gd"
 }, {
+"base": "Control",
+"class": &"MessageLog",
+"language": &"GDScript",
+"path": "res://scripts/ui/MessageLog.gd"
+}, {
 "base": "Entity",
 "class": &"NPC",
 "language": &"GDScript",
@@ -94,6 +99,7 @@ _global_script_class_icons={
 "HostileAI": "",
 "LevelGenerator": "",
 "Map": "",
+"MessageLog": "",
 "NPC": "",
 "Player": "",
 "RectangularRoom": "",
