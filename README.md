@@ -59,9 +59,10 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
 
 ![basic ui](./docs/ui_base.png)
 
+_Needs a better font_
 ## Resources used
 
-- Godot Engine (v4 alpha 10)
+- Godot Engine (v4 alpha 12)
 - Roguelike code is based on the [libtcod tutorial](https://rogueliketutorials.com/tutorials/tcod/v2/)
 - Color Palette is [SLSO8](https://lospec.com/palette-list/slso8)
 - Spritesheet is modified from [Kenney](https://kenney.nl/assets/bit-pack)
