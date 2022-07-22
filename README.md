@@ -24,13 +24,13 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
   - [x] Hidden/Dark Wall Tiles
   - [x] Bump Entities
 
-- [ ] Part 4
+- [x] Part 4
 
   - [x] Fightable Enemies
   - [x] Basic Enemy AI
   - [x] Player Death (does crash the game for now)
-  - [ ] Basic UI
-    - [ ] Health Bar
+  - [x] Basic UI
+    - [x] Health Bar
     - [x] Message Log
 
 - [ ] Refactors
@@ -54,6 +54,10 @@ A small roguelike written in Godot 4 (alpha build), for the 2022 [RoguelikeDev D
 ### FOV visualisation
 
 ![field of view video](./docs/fov.gif)
+
+### Basic UI
+
+![basic ui](./docs/ui_base.png)
 
 ## Resources used
 

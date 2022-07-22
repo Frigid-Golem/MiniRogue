@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwc3ofih0p0ak"]
+
+[ext_resource type="Script" path="res://scripts/ui/ValueLabel.gd" id="1_8syia"]
+
+[node name="ValueLabel" type="Control"]
+offset_left = 277.0
+offset_right = 277.0
+offset_bottom = 26.0
+script = ExtResource("1_8syia")
+
+[node name="Hbox" type="HBoxContainer" parent="."]
+offset_right = 277.0
+offset_bottom = 23.0
+
+[node name="Label" type="Label" parent="Hbox"]
+offset_right = 240.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+text = "Default"
+
+[node name="Display" type="Label" parent="Hbox"]
+offset_left = 244.0
+offset_right = 277.0
+offset_bottom = 26.0
+size_flags_horizontal = 8
+text = "1 / 1"

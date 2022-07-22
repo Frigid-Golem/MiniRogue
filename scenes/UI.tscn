@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccay774swlyqv"]
+[gd_scene load_steps=6 format=3 uid="uid://ccay774swlyqv"]
 
 [ext_resource type="Theme" uid="uid://eoo2bsiu6ep3" path="res://resources/theme.tres" id="1_qdnfs"]
 [ext_resource type="Script" path="res://scripts/UI.gd" id="1_sks34"]
 [ext_resource type="Script" path="res://scripts/ui/MessageLog.gd" id="3_1a4dh"]
+[ext_resource type="PackedScene" uid="uid://bwc3ofih0p0ak" path="res://scenes/UI/ValueLabel.tscn" id="3_2gfhe"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfxlr"]
 
@@ -26,21 +27,21 @@ grow_vertical = 2
 theme = ExtResource("1_qdnfs")
 metadata/_edit_layout_mode = 1
 
-[node name="TabContainer" type="TabContainer" parent="Root/Sidebar"]
+[node name="Tabs" type="TabContainer" parent="Root/Sidebar"]
 anchor_right = 1.0
 offset_bottom = 384.0
 grow_horizontal = 2
 drag_to_rearrange_enabled = true
 metadata/_edit_layout_mode = 1
 
-[node name="Stats" type="Panel" parent="Root/Sidebar/TabContainer"]
+[node name="Stats" type="Panel" parent="Root/Sidebar/Tabs"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 30.0
 offset_bottom = -2.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_lfxlr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Root/Sidebar/TabContainer/Stats"]
+[node name="StatList" type="VBoxContainer" parent="Root/Sidebar/Tabs/Stats"]
 anchor_left = 0.083
 anchor_top = 0.056
 anchor_right = 1.0
@@ -50,28 +51,29 @@ offset_top = -17.712
 offset_right = -16.0
 offset_bottom = -0.160004
 grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_layout_mode = 1
+theme_override_constants/separation = 20
 metadata/_edit_use_custom_anchors = true
 
-[node name="Health" type="HBoxContainer" parent="Root/Sidebar/TabContainer/Stats/VBoxContainer"]
-offset_right = 277.0
-offset_bottom = 23.0
+[node name="Health" parent="Root/Sidebar/Tabs/Stats/StatList" instance=ExtResource("3_2gfhe")]
+offset_left = 0.0
+offset_bottom = 0.0
+label_text = "Health"
 
-[node name="Health Label" type="Label" parent="Root/Sidebar/TabContainer/Stats/VBoxContainer/Health"]
-offset_right = 214.0
-offset_bottom = 23.0
-size_flags_horizontal = 3
-text = "Health"
+[node name="Attack" parent="Root/Sidebar/Tabs/Stats/StatList" instance=ExtResource("3_2gfhe")]
+offset_left = 0.0
+offset_top = 20.0
+offset_bottom = 20.0
+label_text = "Attack"
+no_current = true
 
-[node name="Health Display" type="Label" parent="Root/Sidebar/TabContainer/Stats/VBoxContainer/Health"]
-offset_left = 218.0
-offset_right = 277.0
-offset_bottom = 23.0
-size_flags_horizontal = 8
-text = "25 / 25"
+[node name="Defense" parent="Root/Sidebar/Tabs/Stats/StatList" instance=ExtResource("3_2gfhe")]
+offset_left = 0.0
+offset_top = 40.0
+offset_bottom = 40.0
+label_text = "Defense"
+no_current = true
 
-[node name="Inventory" type="Panel" parent="Root/Sidebar/TabContainer"]
+[node name="Inventory" type="Panel" parent="Root/Sidebar/Tabs"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0

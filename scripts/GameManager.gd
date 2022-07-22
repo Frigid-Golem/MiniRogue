@@ -1,11 +1,10 @@
 class_name GameManager 
 extends Node
 
-
 @onready var map: Map = $Map
 @onready var fov: FOV = $FOV
 @onready var entity_container = $Entities
-@onready var player: Entity = $Entities/Player
+@onready var player: Player = $Entities/Player
 
 @export var max_rooms = 30
 @export var room_max_size = 10
@@ -19,6 +18,7 @@ func _ready() -> void:
 	generator = LevelGenerator.new(self, map, randi())
 	generate_floor()
 	
+	Globals.game_manager = self
 
 func generate_floor():
 	for entity in get_all_entities():
@@ -70,7 +70,7 @@ func entity_at_cell(cell: Vector2i):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-#		player.next_action = Action.ExitAction.new()
+		Globals.log('Generating new level!', Color.html("#1144ff"))
 		generate_floor()
 	elif event.is_action_pressed('move_up', true):
 		player.next_action = Action.BumpAction.new(0, -1)

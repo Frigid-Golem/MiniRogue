@@ -1,22 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://buv11cidgkkr7"]
+[gd_scene load_steps=3 format=3 uid="uid://buv11cidgkkr7"]
 
 [ext_resource type="Script" path="res://scripts/entity/Player.gd" id="1_kf50o"]
-[ext_resource type="Script" path="res://scripts/entity/EntityStats.gd" id="2_0ogdh"]
 [ext_resource type="Texture2D" uid="uid://dhmvm2ya3p3wk" path="res://assets/sprites.png" id="2_wdm8y"]
-
-[sub_resource type="Resource" id="Resource_odaun"]
-script = ExtResource("2_0ogdh")
-name = "Player"
-sprite = Vector2i(4, 0)
-fg_color = Color(1, 0.666667, 0.368627, 1)
-bg_color = Color(1, 1, 1, 0)
-health = 30
-attack = 5
-defense = 3
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_kf50o")
-stats = SubResource("Resource_odaun")
 
 [node name="bg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)

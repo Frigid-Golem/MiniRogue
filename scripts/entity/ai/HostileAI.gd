@@ -1,7 +1,7 @@
 class_name HostileAI extends AIBase
 
 func next_action(entity: Entity):
-	var game : GameManager = entity.game_manager
+	var game = entity.game_manager
 	var player: Player = game.player
 	
 	var dist: int = int(Vector2(entity.cell).distance_to(Vector2(player.cell)))

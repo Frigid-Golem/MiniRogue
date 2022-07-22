@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://el0cqjtgvhvf"]
+[gd_scene load_steps=7 format=3 uid="uid://el0cqjtgvhvf"]
 
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_lwgc3"]
 [ext_resource type="Script" path="res://scripts/Map.gd" id="2_0f638"]
 [ext_resource type="TileSet" uid="uid://dhsdh3n40y2jh" path="res://resources/Tilemap.tres" id="2_y3t1r"]
 [ext_resource type="Script" path="res://scripts/FOV.gd" id="4_pa0j7"]
 [ext_resource type="PackedScene" uid="uid://buv11cidgkkr7" path="res://scenes/Entities/Player.tscn" id="4_q2ni5"]
+[ext_resource type="Resource" uid="uid://darks1hlwmsob" path="res://resources/entities/Player.tres" id="5_hsquu"]
 
 [node name="GameManager" type="Node" groups=["game_manager"]]
 script = ExtResource("1_lwgc3")
@@ -35,6 +36,7 @@ custom_data_layers = ["walkable", "transparent"]
 
 [node name="Player" parent="Entities" instance=ExtResource("4_q2ni5")]
 position = Vector2(512, 288)
+stats = ExtResource("5_hsquu")
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Entities/Player"]

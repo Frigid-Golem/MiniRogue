@@ -1,5 +1,8 @@
 class_name Entity extends Node2D
 
+signal updated_stat_value(stat: String, value: int)
+signal updated_stat_total(stat: String, value: int)
+
 @export var stats: Resource = null
 var entity_stats: EntityStats = null
 
@@ -8,7 +11,7 @@ var entity_stats: EntityStats = null
 
 var current_health = 1
 
-var game_manager: GameManager = null
+var game_manager = null
 
 var cell: Vector2i:
 	set(pos):
@@ -26,8 +29,12 @@ func _ready() -> void:
 
 func _setup() -> void:
 	entity_stats = stats
+	updated_stat_total.emit("health", entity_stats.health)
+	updated_stat_total.emit("attack", entity_stats.health)
+	updated_stat_total.emit("defense", entity_stats.health)
 	
 	current_health = entity_stats.health
+	updated_stat_value.emit("health", entity_stats.health)
 	
 	fg_sprite.modulate = entity_stats.fg_color
 	bg_sprite.modulate = entity_stats.bg_color
@@ -36,6 +43,8 @@ func _setup() -> void:
 	
 	name = entity_stats.name
 	
+	emit_stats()
+	
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		_setup()
@@ -43,3 +52,10 @@ func _process(_delta: float) -> void:
 func get_next_action():
 	@warning_ignore(assert_always_false)
 	assert(false, "Not Implemented")
+
+func emit_stats():
+	updated_stat_total.emit("health", entity_stats.health)
+	updated_stat_total.emit("attack", entity_stats.attack)
+	updated_stat_total.emit("defense", entity_stats.defense)
+	
+	updated_stat_value.emit("health", current_health)

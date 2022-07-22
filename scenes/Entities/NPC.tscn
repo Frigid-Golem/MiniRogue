@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cit37inl371ru"]
+[gd_scene load_steps=3 format=3 uid="uid://cit37inl371ru"]
 
 [ext_resource type="Script" path="res://scripts/entity/NPC.gd" id="1_sj68i"]
 [ext_resource type="Texture2D" uid="uid://dhmvm2ya3p3wk" path="res://assets/sprites.png" id="2_v41lr"]
-[ext_resource type="Resource" uid="uid://darks1hlwmsob" path="res://resources/entities/Player.tres" id="2_wvlec"]
 
 [node name="NPC" type="Node2D"]
 script = ExtResource("1_sj68i")
-stats = ExtResource("2_wvlec")
 
 [node name="bg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)

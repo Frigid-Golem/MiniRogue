@@ -4,9 +4,11 @@ var visualisation_mode: bool = false
 var visualisation_delay: float = 0.25
 
 var map: Map
-var engine: GameManager
+var engine
 
-var NPC = load('res://scenes/Entities/NPC.tscn')
+var Npc = load('res://scenes/Entities/NPC.tscn')
+var Skeleton = preload('res://resources/entities/Skeleton.tres')
+var Golem = preload('res://resources/entities/Golem.tres')
 
 const floor_atlas = Vector2(10, 1)
 
@@ -83,12 +85,12 @@ func fill_room_with_monsters(room: RectangularRoom, maximum_amount: int):
 			continue
 		
 		if randf() < 0.8:
-			spawn_npc(cell, load('res://resources/Entities/Skeleton.tres'))
+			spawn_npc(cell, Skeleton)
 		else:
-			spawn_npc(cell, load('res://resources/Entities/Golem.tres'))
+			spawn_npc(cell, Golem)
 
 func spawn_npc(cell: Vector2i, stats: EntityStats):
-	var npc : NPC = NPC.instantiate()
+	var npc : NPC = Npc.instantiate()
 	npc.stats = stats
 	npc.cell = cell
 	

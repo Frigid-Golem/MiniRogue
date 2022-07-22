@@ -88,6 +88,11 @@ _global_script_classes=[{
 "class": &"Utils",
 "language": &"GDScript",
 "path": "res://scripts/Utils.gd"
+}, {
+"base": "Control",
+"class": &"ValueLabel",
+"language": &"GDScript",
+"path": "res://scripts/ui/ValueLabel.gd"
 }]
 _global_script_class_icons={
 "AIBase": "",
@@ -105,7 +110,8 @@ _global_script_class_icons={
 "RectangularRoom": "",
 "Room": "",
 "Tunnel": "",
-"Utils": ""
+"Utils": "",
+"ValueLabel": ""
 }
 
 [application]
@@ -114,6 +120,7 @@ config/name="MiniRogue"
 run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 config/icon="res://icon.png"
+boot_splash/minimum_display_time=500
 
 [autoload]
 
